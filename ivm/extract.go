@@ -82,7 +82,7 @@ func extractVulns(jars [][]byte) ([]string, error) {
 
 			doc := etree.NewDocument()
 			if _, err := doc.ReadFrom(ze.reader); err != nil {
-				panic(err)
+				return err
 			}
 
 			vuln := doc.SelectElement("Vulnerability")
